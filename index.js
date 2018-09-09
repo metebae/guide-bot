@@ -25,15 +25,15 @@ client.on('ready', async () => { // Bot başarıyla giriş yaptığında;
 });
 
 client.on('message', async mesaj => { // Mesaj atıldığında message eventini "mesaj" değişkenine tanımlayalım.
-	let prefix = ayarlar.prefix; // Prefiximizi "ayarlar.json" dosyasında belirlediğimiz prefix olarak tanımlayalım.
-	if(mesaj.author.bot) return; // Mesaj sahibi botsa bir şey yapmayalım.
-	if(mesaj.channel.type === 'dm') return; // Mesaj özel mesajdan atılmışsa bir şey yapmayalım.
-	if(!mesaj.content.startsWith(prefix)) return; // Eğer mesaj prefix ile başlamıyorsa bir şey yapmayalım.
-	let messageArray = mesaj.content.split(' '); // Mesaj içeriğini "messageArray" değişkenine atayalım.
+    let prefix = ayarlar.prefix; // Prefiximizi "ayarlar.json" dosyasında belirlediğimiz prefix olarak tanımlayalım.
+    if(mesaj.author.bot) return; // Mesaj sahibi botsa bir şey yapmayalım.
+    if(mesaj.channel.type === 'dm') return; // Mesaj özel mesajdan atılmışsa bir şey yapmayalım.
+    if(!mesaj.content.startsWith(prefix)) return; // Eğer mesaj prefix ile başlamıyorsa bir şey yapmayalım.
+    let messageArray = mesaj.content.split(' '); // Mesaj içeriğini "messageArray" değişkenine atayalım.
     let cmd = messageArray[0]; // "messageArray" değişkenini "cmd" değişkenine atayalım.
     let args = messageArray.slice(1); // Argümanlarımızı "args" değişkenine atayalım.
 
-	let komutDosyasi = client.komutlar.get(cmd.slice(prefix.length)); // Komut dosyalarını alalım.
+    let komutDosyasi = client.komutlar.get(cmd.slice(prefix.length)); // Komut dosyalarını alalım.
     if(komutDosyasi) komutDosyasi.run(client, mesaj, args); // Eğer komut dosyası varsa, onları çalıştırsın.
 
     if(mesaj.content.toLowerCase() === 'sa') { // Bir mesaj atıldığında eğer mesaj "sa" ise;
