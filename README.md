@@ -1,7 +1,7 @@
 # guide-bot
 discord.js için ufak bir başlangıç botu.
 
-Çalıştırmak için botu kurduğunuz klasöre sağ tıklayıp "Komut penceresini burada aç" seçeneğine tıklayın.
+Çalıştırmak için botu kurduğunuz klasöre shift tuşuna basılı tutup sağ tıklayıp "Komut penceresini burada aç" seçeneğine tıklayın.
 
 Sırasıyla;
 
